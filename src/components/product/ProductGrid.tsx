@@ -19,9 +19,6 @@ export function ProductGrid({ products }: ProductGridProps) {
             price={product.price}
             image={product.images[0]}
             images={product.images}
-            onQuickAdd={() => {
-              console.log('Quick add:', product.id);
-            }}
           />
         ))}
       </div>

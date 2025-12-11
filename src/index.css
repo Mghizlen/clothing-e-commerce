@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global css */
+:root {
+  --bg: #fbfaf8;
+  --fg: #111111;
+  --accent: #cdb892;
+  --primary: #0a0a0a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto px-4 max-w-site;
+  }
+}

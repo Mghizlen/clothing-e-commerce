@@ -1,3 +1,11 @@
+// Import local images
+import cashmereImg from '../assets/Premium Cashmere Sweater.jpeg';
+import silkCamisoleImg from '../assets/Pure Silk Camisole.png';
+import leatherBeltImg from '../assets/Italian Leather Belt.png';
+import leatherLoafersImg from '../assets/Italian Leather Loafers.png';
+import woolTrousersWomenImg from '../assets/Tailored Wool Trousers women.jpg';
+import woolTrousersMenImg from '../assets/tailored wool trousers men.png';
+
 export interface Product {
   id: string;
   slug: string;
@@ -18,218 +26,316 @@ export interface Product {
   rating: number;
 }
 
-const baseImg = 'https://images.unsplash.com/photo-';
-
 export const products: Product[] = [
   {
-    id: 'p1',
-    slug: 'signature-wool-coat-charcoal',
+    id: 'signature-wool-coat',
+    slug: 'signature-wool-coat',
     name: 'Signature Wool Coat',
     brand: 'Champagne Noir',
     price: 1200,
     currency: 'USD',
     images: [
-      `${baseImg}1539533018447-63fcce2678e3?w=800&h=1000&fit=crop`,
-      `${baseImg}1591047139829-d91aecb6caea?w=800&h=1000&fit=crop`
+      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=800&q=80',
+      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
     ],
     description: 'Our iconic wool coat crafted from the finest Italian suiting. Features elegant tailoring and timeless design.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Charcoal', hex: '#333333', images: [`${baseImg}1539533018447-63fcce2678e3?w=800&h=1000&fit=crop`] },
-      { name: 'Camel', hex: '#c19a6b', images: [`${baseImg}1591047139829-d91aecb6caea?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Charcoal',
+        hex: '#36454F',
+        images: [
+          'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=800&q=80',
+          'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&q=80',
+        ],
+      },
+      {
+        name: 'Camel',
+        hex: '#C19A6B',
+        images: [
+          'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=800&q=80',
+        ],
+      },
     ],
-    stock: { 'XS': 5, 'S': 8, 'M': 12, 'L': 10, 'XL': 6 },
-    tags: ['women', 'Outerwear', 'new', 'collection'],
-    rating: 4.8
+    stock: { XS: 5, S: 8, M: 10, L: 7, XL: 3 },
+    tags: ['outerwear', 'women', 'bestseller', 'new'],
+    rating: 4.8,
   },
   {
-    id: 'p2',
-    slug: 'silk-camisole-ivory',
+    id: 'silk-camisole',
+    slug: 'silk-camisole',
     name: 'Pure Silk Camisole',
     brand: 'Champagne Noir',
     price: 280,
     currency: 'USD',
     images: [
-      `${baseImg}1515886657613-9d3515518553?w=800&h=1000&fit=crop`,
-      `${baseImg}1617137968427-85924c800a22?w=800&h=1000&fit=crop`
+      silkCamisoleImg,
+      silkCamisoleImg,
     ],
-    description: 'Luxurious 100% silk camisole with delicate adjustable straps. Perfect layering piece.',
+    description: 'Delicate silk camisole with adjustable straps. Perfect for layering or wearing alone.',
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Ivory', hex: '#fffff0', images: [`${baseImg}1515886657613-9d3515518553?w=800&h=1000&fit=crop`] },
-      { name: 'Champagne', hex: '#f0e6d2', images: [`${baseImg}1617137968427-85924c800a22?w=800&h=1000&fit=crop`] },
-      { name: 'Charcoal', hex: '#2a2a2a', images: [`${baseImg}1583743814966-18f8bd1ec10f?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Champagne',
+        hex: '#F7E7CE',
+        images: [silkCamisoleImg],
+      },
+      {
+        name: 'Black',
+        hex: '#000000',
+        images: [silkCamisoleImg],
+      },
     ],
-    stock: { 'XS': 15, 'S': 20, 'M': 18, 'L': 12 },
-    tags: ['women', 'Basics', 'new'],
-    rating: 4.9
+    stock: { XS: 12, S: 15, M: 18, L: 10 },
+    tags: ['basics', 'women', 'silk', 'new'],
+    rating: 4.9,
   },
   {
-    id: 'p3',
-    slug: 'cashmere-sweater-cream',
+    id: 'cashmere-sweater',
+    slug: 'cashmere-sweater',
     name: 'Premium Cashmere Sweater',
     brand: 'Champagne Noir',
-    price: 650,
+    price: 450,
     currency: 'USD',
     images: [
-      `${baseImg}1618932260643-ee00dbbc36b9?w=800&h=1000&fit=crop`,
-      `${baseImg}1620799140188-3bb328b23f48?w=800&h=1000&fit=crop`
+      cashmereImg,
+      cashmereImg,
     ],
-    description: 'Exquisitely soft pure cashmere sweater. Hand-finished details and impeccable craftsmanship.',
+    description: '100% pure cashmere crewneck sweater. Soft, lightweight, and luxuriously warm.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Cream', hex: '#fffdd0', images: [`${baseImg}1618932260643-ee00dbbc36b9?w=800&h=1000&fit=crop`] },
-      { name: 'Taupe', hex: '#b38b8b', images: [`${baseImg}1620799140188-3bb328b23f48?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Oatmeal',
+        hex: '#E8DCC4',
+        images: [cashmereImg],
+      },
+      {
+        name: 'Navy',
+        hex: '#000080',
+        images: [cashmereImg],
+      },
     ],
-    stock: { 'XS': 4, 'S': 6, 'M': 8, 'L': 7, 'XL': 3 },
-    tags: ['women', 'Knitwear', 'collection'],
-    rating: 4.9
+    stock: { XS: 6, S: 9, M: 11, L: 8, XL: 4 },
+    tags: ['knitwear', 'women', 'cashmere', 'bestseller'],
+    rating: 4.9,
   },
   {
-    id: 'p4',
-    slug: 'tailored-trousers-black',
+    id: 'wool-trousers',
+    slug: 'wool-trousers',
     name: 'Tailored Wool Trousers',
     brand: 'Champagne Noir',
-    price: 420,
+    price: 380,
     currency: 'USD',
     images: [
-      `${baseImg}1594633312681-457a4282c4f7?w=800&h=1000&fit=crop`,
-      `${baseImg}1624378439575-52b3f14d6527?w=800&h=1000&fit=crop`
+      woolTrousersWomenImg,
+      woolTrousersMenImg,
     ],
-    description: 'Impeccably tailored wool trousers with a perfect fit. Essential luxury wardrobe piece.',
+    description: 'Impeccably tailored wool trousers with a high waist and wide leg.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Black', hex: '#000000', images: [`${baseImg}1594633312681-457a4282c4f7?w=800&h=1000&fit=crop`] },
-      { name: 'Navy', hex: '#000080', images: [`${baseImg}1624378439575-52b3f14d6527?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Black',
+        hex: '#000000',
+        images: [woolTrousersWomenImg],
+      },
+      {
+        name: 'Grey',
+        hex: '#808080',
+        images: [woolTrousersMenImg],
+      },
     ],
-    stock: { 'XS': 10, 'S': 12, 'M': 15, 'L': 14, 'XL': 8 },
-    tags: ['women', 'men', 'Bottoms'],
-    rating: 4.7
+    stock: { XS: 7, S: 10, M: 12, L: 9, XL: 5 },
+    tags: ['bottoms', 'women', 'men', 'tailored'],
+    rating: 4.7,
   },
   {
-    id: 'p5',
-    slug: 'leather-loafers-burgundy',
+    id: 'leather-loafers',
+    slug: 'leather-loafers',
     name: 'Italian Leather Loafers',
     brand: 'Champagne Noir',
-    price: 580,
+    price: 520,
     currency: 'USD',
     images: [
-      `${baseImg}1533867774919-d8c5cd217e38?w=800&h=1000&fit=crop`,
-      `${baseImg}1560343090-f0409e92791a?w=800&h=1000&fit=crop`
+      leatherLoafersImg,
+      leatherLoafersImg,
     ],
-    description: 'Handcrafted leather loafers from Italy. Comfort meets timeless elegance.',
-    sizes: ['5', '6', '7', '8', '9', '10', '11'],
+    description: 'Handcrafted Italian leather loafers. Classic style meets modern comfort.',
+    sizes: ['36', '37', '38', '39', '40', '41'],
     colors: [
-      { name: 'Burgundy', hex: '#800020', images: [`${baseImg}1533867774919-d8c5cd217e38?w=800&h=1000&fit=crop`] },
-      { name: 'Black', hex: '#000000', images: [`${baseImg}1560343090-f0409e92791a?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Black',
+        hex: '#000000',
+        images: [leatherLoafersImg],
+      },
+      {
+        name: 'Tan',
+        hex: '#D2B48C',
+        images: [leatherLoafersImg],
+      },
     ],
-    stock: { '5': 3, '6': 4, '7': 6, '8': 8, '9': 7, '10': 5, '11': 2 },
-    tags: ['men', 'women'],
-    rating: 4.8
+    stock: { '36': 4, '37': 6, '38': 8, '39': 7, '40': 5, '41': 3 },
+    tags: ['shoes', 'women', 'leather'],
+    rating: 4.8,
   },
   {
-    id: 'p6',
-    slug: 'linen-shirt-white',
+    id: 'linen-shirt',
+    slug: 'linen-shirt',
     name: 'Pure Linen Shirt',
     brand: 'Champagne Noir',
-    price: 320,
+    price: 195,
     currency: 'USD',
     images: [
-      `${baseImg}1598032897177-61d9d34629d7?w=800&h=1000&fit=crop`,
-      `${baseImg}1603252109360-909baaf261c7?w=800&h=1000&fit=crop`
+      'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+      'https://images.unsplash.com/photo-1598032895397-b9c37c924971?w=800&q=80',
     ],
-    description: 'Breathable Belgian linen shirt with classic tailoring. Perfect for any season.',
+    description: 'Breathable linen shirt with a relaxed fit. Perfect for warm weather.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'White', hex: '#ffffff', images: [`${baseImg}1598032897177-61d9d34629d7?w=800&h=1000&fit=crop`] },
-      { name: 'Sage', hex: '#9dc183', images: [`${baseImg}1603252109360-909baaf261c7?w=800&h=1000&fit=crop`] }
+      {
+        name: 'White',
+        hex: '#FFFFFF',
+        images: [
+          'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=800&q=80',
+        ],
+      },
+      {
+        name: 'Beige',
+        hex: '#F5F5DC',
+        images: [
+          'https://images.unsplash.com/photo-1598032895397-b9c37c924971?w=800&q=80',
+        ],
+      },
     ],
-    stock: { 'XS': 12, 'S': 16, 'M': 20, 'L': 18, 'XL': 10 },
-    tags: ['men', 'women', 'new'],
-    rating: 4.6
+    stock: { XS: 10, S: 14, M: 16, L: 12, XL: 8 },
+    tags: ['basics', 'women', 'men', 'linen', 'sale'],
+    rating: 4.6,
   },
   {
-    id: 'p7',
-    slug: 'wool-blazer-navy',
+    id: 'wool-blazer',
+    slug: 'wool-blazer',
     name: 'Structured Wool Blazer',
     brand: 'Champagne Noir',
-    price: 780,
+    price: 680,
     currency: 'USD',
     images: [
-      `${baseImg}1507680434567-5739c80be1ac?w=800&h=1000&fit=crop`,
-      `${baseImg}1617127365376-ec9409ba85aa?w=800&h=1000&fit=crop`
+      'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=800&q=80',
+      'https://images.unsplash.com/photo-1594938291221-94f18cbb5660?w=800&q=80',
     ],
-    description: 'Architectural wool blazer with impeccable seaming. An investment piece for the discerning wardrobe.',
+    description: 'Sharp, structured blazer in premium wool. Essential for any wardrobe.',
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     colors: [
-      { name: 'Navy', hex: '#001f3f', images: [`${baseImg}1507680434567-5739c80be1ac?w=800&h=1000&fit=crop`] },
-      { name: 'Charcoal', hex: '#36454f', images: [`${baseImg}1617127365376-ec9409ba85aa?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Black',
+        hex: '#000000',
+        images: [
+          'https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=800&q=80',
+        ],
+      },
+      {
+        name: 'Charcoal',
+        hex: '#36454F',
+        images: [
+          'https://images.unsplash.com/photo-1594938291221-94f18cbb5660?w=800&q=80',
+        ],
+      },
     ],
-    stock: { 'XS': 4, 'S': 6, 'M': 8, 'L': 7, 'XL': 5 },
-    tags: ['women', 'men', 'Outerwear', 'collection'],
-    rating: 4.9
+    stock: { XS: 5, S: 8, M: 10, L: 7, XL: 4 },
+    tags: ['outerwear', 'women', 'men', 'tailored', 'bestseller'],
+    rating: 4.9,
   },
   {
-    id: 'p8',
-    slug: 'midi-dress-black',
+    id: 'silk-dress',
+    slug: 'silk-dress',
     name: 'Silk Midi Dress',
     brand: 'Champagne Noir',
-    price: 890,
+    price: 540,
     currency: 'USD',
     images: [
-      `${baseImg}1595777457583-95e059d581b8?w=800&h=1000&fit=crop`,
-      `${baseImg}1612423284934-2850a4ea6c20?w=800&h=1000&fit=crop`
+      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80',
+      'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&q=80',
     ],
-    description: 'Elegant silk midi dress with subtle draping. Timeless sophistication for any occasion.',
+    description: 'Flowing silk midi dress with subtle draping. Effortlessly elegant.',
     sizes: ['XS', 'S', 'M', 'L'],
     colors: [
-      { name: 'Black', hex: '#000000', images: [`${baseImg}1595777457583-95e059d581b8?w=800&h=1000&fit=crop`] },
-      { name: 'Champagne', hex: '#f3e5ab', images: [`${baseImg}1612423284934-2850a4ea6c20?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Champagne',
+        hex: '#F7E7CE',
+        images: [
+          'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=800&q=80',
+        ],
+      },
+      {
+        name: 'Black',
+        hex: '#000000',
+        images: [
+          'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=800&q=80',
+        ],
+      },
     ],
-    stock: { 'XS': 3, 'S': 5, 'M': 7, 'L': 6 },
-    tags: ['women', 'Dresses', 'new', 'sale'],
-    rating: 4.8
+    stock: { XS: 6, S: 9, M: 10, L: 7 },
+    tags: ['dresses', 'women', 'silk', 'collection'],
+    rating: 4.8,
   },
   {
-    id: 'p9',
-    slug: 'leather-belt-tan',
+    id: 'leather-belt',
+    slug: 'leather-belt',
     name: 'Italian Leather Belt',
     brand: 'Champagne Noir',
-    price: 220,
+    price: 165,
     currency: 'USD',
     images: [
-      `${baseImg}1555507171-8b286c77ecb6?w=800&h=1000&fit=crop`,
-      `${baseImg}1618886492726-f2f90df4fc07?w=800&h=1000&fit=crop`
+      leatherBeltImg,
+      leatherBeltImg,
     ],
-    description: 'Supple Italian leather belt with gold buckle. Essential accessory for elevated style.',
-    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Classic leather belt with polished brass buckle. Timeless accessory.',
+    sizes: ['S', 'M', 'L'],
     colors: [
-      { name: 'Tan', hex: '#d4a574', images: [`${baseImg}1555507171-8b286c77ecb6?w=800&h=1000&fit=crop`] },
-      { name: 'Black', hex: '#1a1a1a', images: [`${baseImg}1618886492726-f2f90df4fc07?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Black',
+        hex: '#000000',
+        images: [leatherBeltImg],
+      },
+      {
+        name: 'Brown',
+        hex: '#8B4513',
+        images: [leatherBeltImg],
+      },
     ],
-    stock: { 'S': 10, 'M': 14, 'L': 12, 'XL': 8 },
-    tags: ['men', 'women', 'sale'],
-    rating: 4.7
+    stock: { S: 15, M: 20, L: 12 },
+    tags: ['accessories', 'women', 'men', 'leather'],
+    rating: 4.7,
   },
   {
-    id: 'p10',
-    slug: 'wool-scarf-burgundy',
+    id: 'wool-scarf',
+    slug: 'wool-scarf',
     name: 'Fine Wool Scarf',
     brand: 'Champagne Noir',
-    price: 185,
+    price: 125,
     currency: 'USD',
     images: [
-      `${baseImg}1609691535111-54f5d5e2d05f?w=800&h=1000&fit=crop`,
-      `${baseImg}1606903688521-c25b9e8f1e51?w=800&h=1000&fit=crop`
+      'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&q=80',
+      'https://images.unsplash.com/photo-1601924270582-e898a9a28e0d?w=800&q=80',
     ],
-    description: 'Luxuriously soft wool scarf. Perfect to elevate any outfit with understated elegance.',
+    description: 'Soft wool scarf in classic pattern. Perfect finishing touch.',
     sizes: ['One Size'],
     colors: [
-      { name: 'Burgundy', hex: '#7a1f1f', images: [`${baseImg}1609691535111-54f5d5e2d05f?w=800&h=1000&fit=crop`] },
-      { name: 'Camel', hex: '#c8a882', images: [`${baseImg}1606903688521-c25b9e8f1e51?w=800&h=1000&fit=crop`] }
+      {
+        name: 'Camel',
+        hex: '#C19A6B',
+        images: [
+          'https://images.unsplash.com/photo-1520903920243-00d872a2d1c9?w=800&q=80',
+        ],
+      },
+      {
+        name: 'Grey',
+        hex: '#808080',
+        images: [
+          'https://images.unsplash.com/photo-1601924270582-e898a9a28e0d?w=800&q=80',
+        ],
+      },
     ],
     stock: { 'One Size': 25 },
-    tags: ['women', 'men', 'sale'],
-    rating: 4.8
+    tags: ['accessories', 'women', 'men', 'wool', 'sale'],
+    rating: 4.6,
   },
 ];

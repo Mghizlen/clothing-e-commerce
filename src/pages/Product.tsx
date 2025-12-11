@@ -6,6 +6,7 @@ import { VariantSelector } from '../components/product/VariantSelector';
 import { AddToBag } from '../components/product/AddToBag';
 import { useProductBySlug } from '../lib/queries';
 import { useCart } from '../contexts/CartContext';
+import { useWishlist } from '../contexts/WishlistContext';
 import { useAuth } from '../contexts/AuthContext';
 import { formatPriceSimple } from '../lib/priceUtil';
 
@@ -14,8 +15,8 @@ export default function Product() {
   const { data: product } = useProductBySlug(slug || '');
   const [selectedColor, setSelectedColor] = useState<string>();
   const [selectedSize, setSelectedSize] = useState<string>();
-  const [_zoomImageIdx, setZoomImageIdx] = useState<number>();
   const { addToCart } = useCart();
+  const { toggleWishlist, isInWishlist } = useWishlist();
   const { isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
@@ -41,11 +42,26 @@ export default function Product() {
     });
   };
 
+  const handleWishlistToggle = () => {
+    if (!isAuthenticated) {
+      navigate('/login', { state: { from: { pathname: `/products/${slug}` } } });
+      return;
+    }
+
+    toggleWishlist({
+      productId: product.id,
+      name: product.name,
+      brand: product.brand,
+      price: formatPriceSimple(product.price),
+      image: product.images[0],
+    });
+  };
+
   return (
     <Container className="py-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Gallery */}
-        <ProductGallery images={product.images} alt={product.name} onImageClick={setZoomImageIdx} />
+        <ProductGallery images={product.images} alt={product.name} />
 
         {/* Details */}
         <div className="space-y-8">
@@ -89,6 +105,8 @@ export default function Product() {
           <AddToBag
             productId={product.id}
             onAddToBag={handleAddToBag}
+            onWishlistToggle={handleWishlistToggle}
+            isWishlisted={isInWishlist(product.id)}
             disabled={!selectedColor || !selectedSize}
           />
 

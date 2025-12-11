@@ -1,3 +1,6 @@
+import silkDressImg from '../assets/Apricot Floral V Neck Long Puff Sleeve Satin Sheath Maxi Satin Dress.jpg';
+import knitSweaterImg from '../assets/Womens Knitted Sweater.jpg';
+
 export const collections = [
   {
     id: 'c1',
@@ -10,14 +13,14 @@ export const collections = [
     id: 'c2',
     name: 'Silk Essentials',
     label: 'New In',
-    image: 'https://images.unsplash.com/photo-1515886657613-9d3515518553?w=1200&h=1600&fit=crop',
+    image: silkDressImg,
     href: '/new'
   },
   {
     id: 'c3',
     name: 'Knit Atelier',
     label: 'Knitwear',
-    image: 'https://images.unsplash.com/photo-1618932260643-ee00dbbc36b9?w=1200&h=1600&fit=crop',
+    image: knitSweaterImg,
     href: '/collections'
   }
 ];

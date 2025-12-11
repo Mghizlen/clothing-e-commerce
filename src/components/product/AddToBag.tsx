@@ -1,15 +1,17 @@
-import React from 'react';
+import { useState } from 'react';
 import { Button } from '../ui/Button';
 import { Icon } from '../ui/Icon';
 
 interface AddToBagProps {
   productId: string;
   onAddToBag: (qty: number) => void;
+  onWishlistToggle?: () => void;
   disabled?: boolean;
+  isWishlisted?: boolean;
 }
 
-export function AddToBag({ productId: _productId, onAddToBag, disabled }: AddToBagProps) {
-  const [qty, setQty] = React.useState(1);
+export function AddToBag({ onAddToBag, onWishlistToggle, disabled, isWishlisted }: AddToBagProps) {
+  const [qty, setQty] = useState(1);
 
   return (
     <div className="space-y-4">
@@ -37,10 +39,12 @@ export function AddToBag({ productId: _productId, onAddToBag, disabled }: AddToB
       >
         Add to Bag
       </Button>
-      <Button variant="ghost" size="lg" className="w-full">
-        <Icon name="heart" size="sm" className="mr-2" />
-        Add to Wishlist
-      </Button>
+      {onWishlistToggle && (
+        <Button variant="ghost" size="lg" className="w-full" onClick={onWishlistToggle}>
+          <Icon name="heart" size="sm" className="mr-2" fill={isWishlisted ? 'currentColor' : 'none'} />
+          {isWishlisted ? 'Remove from Wishlist' : 'Add to Wishlist'}
+        </Button>
+      )}
     </div>
   );
 }

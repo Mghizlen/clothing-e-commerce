@@ -1,8 +1,9 @@
 import { Container } from '../layout/Container';
 import { ProductCard } from './ProductCard';
+import { Product } from '../../data/products';
 
 interface ProductGridProps {
-  products: Array<any>;
+  products: Product[];
 }
 
 export function ProductGrid({ products }: ProductGridProps) {

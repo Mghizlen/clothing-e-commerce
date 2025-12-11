@@ -5,7 +5,7 @@ interface IconProps extends React.SVGAttributes<SVGSVGElement> {
   size?: 'sm' | 'md' | 'lg';
 }
 
-const iconMap: Record<string, (props: any) => JSX.Element> = {
+const iconMap: Record<string, (props: React.SVGAttributes<SVGSVGElement>) => JSX.Element> = {
   search: (props) => (
     <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
       <circle cx="11" cy="11" r="8" />
